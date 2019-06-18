@@ -1,0 +1,9 @@
+.item {
+    display: flex;
+    width: 500px;
+    align-items: center
+}
+.item-wrap{
+    display: flex;
+    flex-direction: column;
+}

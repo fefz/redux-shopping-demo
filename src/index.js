@@ -5,10 +5,18 @@ import App from "../src/components/App";
 import logger from "redux-logger";
 import reducer from "../src/reducers/mall";
 import { createStore, applyMiddleware } from "redux";
+import {getAllItems} from '../src/actions/mall'
+import thunk from 'redux-thunk'
 import '../styles/index.css'
+import 'antd/dist/antd.css'
 
-const store = createStore(reducer, applyMiddleware(logger));
+let middleware = [thunk, logger]
+const store = createStore(reducer, applyMiddleware(...middleware));
+store.dispatch(getAllItems())
 const rootElement = document.getElementById("app");
+
+
+
 render(
   <Provider store={store}>
     <App />

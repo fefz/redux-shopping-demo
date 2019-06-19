@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Rye Special Old",
+        "thumb": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+        "count": 4,
+        "price" : 611.2
+    },
+    {
+        "id": 2,
+        "title": "Remy Red Berry Infusion",
+        "thumb": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+        "count": 4,
+        "price": 33.0
+    },
+    {
+        "id": 3,
+        "title": "Sambuca - Ramazzotti",
+        "thumb": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+        "count": 4,
+        "price": 113.0
+    }
+]

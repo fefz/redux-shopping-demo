@@ -6,7 +6,7 @@ const Cart = ({ cartList }) => {
     <div>
       <p>My Cart:</p>
       <ol>
-        {cartList.map(item => {
+        {cartList.addedIds.map(item => {
           return <Item item={item} />;
         })}
       </ol>

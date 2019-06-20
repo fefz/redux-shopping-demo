@@ -1,16 +1,21 @@
 import React from "react";
+import { Row, Col } from "antd";
 
-const CartItem = ({item}) => {
-    return (
-        <li>
-            <div className="item">
-                <div className='item-wrap'>
-                    <span>Count: {item.count}</span>
-                    <p>{item.title}</p>
-                </div>
-            </div>
-        </li>
-    );
+const CartItem = ({ count, title }) => {
+  return (
+    <li>
+      <Row gutter={8}>
+        <Col className="gutter-row" span={12}>
+          <div className="gutter-box">{title}</div>
+        </Col>
+        <Col className="gutter-row" span={12}>
+          <div className="gutter-box">
+            <span>Count: {count}</span>
+          </div>
+        </Col>
+      </Row>
+    </li>
+  );
 };
 
 export default CartItem;

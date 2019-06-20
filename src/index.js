@@ -5,7 +5,7 @@ import App from "../src/components/App";
 import logger from "redux-logger";
 import reducer from "../src/reducers/mall";
 import { createStore, applyMiddleware } from "redux";
-import '../styles/index.css'
+import "../styles/index.css";
 
 const store = createStore(reducer, applyMiddleware(logger));
 const rootElement = document.getElementById("app");

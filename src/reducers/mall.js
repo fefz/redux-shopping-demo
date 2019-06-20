@@ -10,51 +10,50 @@ import { combineReducers } from "redux";
 const initCartState = {
   addItem: [],
   countOfItem: {}
-}
+};
 
 const addedItem = (state = initCartState.addItem, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       if (state.indexOf(action.id) !== -1) {
-        return state
+        return state;
       }
-      return [...state, action.id]
+      return [...state, action.id];
     default:
-      return state
+      return state;
   }
-}
+};
 
 const countOfItem = (state = initCartState.countOfItem, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const { id } = action
+      const { id } = action;
       return {
         ...state,
         [id]: (state[id] || 0) + 1
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export const getCount = (state, id) =>
-  state.countOfItem[id] || 0
+export const getCount = (state, id) => state.countOfItem[id] || 0;
 
-export const getAddedItems = state => state.addItem
+export const getAddedItems = state => state.addItem;
 
 export const cartLIst = (state = initCartState, action) => {
   switch (action.type) {
     case CHECK_OUT:
-      return initCartState
+      return initCartState;
     case CLEAR_CART:
-      return initCartState
+      return initCartState;
     default:
       return {
         addedIds: addedItem(state.addedIds, action),
         quantityById: countOfItem(state.quantityById, action)
-      }
+      };
   }
-}
+};
 
 const totalAmount = (state = [], action) => {
   if (action.type === CHECK_OUT) {
@@ -93,17 +92,14 @@ const repository = (state = initItemState, action) => {
     case GET_ALL_ITEMS:
       return [...state, ...initItemState];
     case ADD_TO_CART:
-      return [
-        ...state,
-        count: state.count - 1
-      ]
+      return [...state, { count: state.count - 1 }];
     case DEL_FROM_CART:
       return {
         ...state,
         count: state.count + 1
-      }
+      };
     default:
-      return state
+      return state;
   }
 };
 
